@@ -84,11 +84,8 @@ class ParticleBackground {
             // Draw particle
             this.ctx.beginPath();
             this.ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-            this.ctx.fillStyle = p.color + "0.6)";
-            this.ctx.shadowBlur = 8;
-            this.ctx.shadowColor = p.color + "0.8)";
+            this.ctx.fillStyle = p.color + "0.35)";
             this.ctx.fill();
-            this.ctx.shadowBlur = 0;
 
             // Draw connections
             for (let j = i + 1; j < this.particles.length; j++) {
@@ -98,11 +95,11 @@ class ParticleBackground {
                 const dist = Math.sqrt(dx * dx + dy * dy);
 
                 if (dist < 125) {
-                    const alpha = (1 - dist / 125) * 0.18;
+                    const alpha = (1 - dist / 125) * 0.12;
                     this.ctx.beginPath();
                     this.ctx.moveTo(p.x, p.y);
                     this.ctx.lineTo(p2.x, p2.y);
-                    this.ctx.strokeStyle = `rgba(56, 189, 248, ${alpha})`;
+                    this.ctx.strokeStyle = `rgba(2, 132, 199, ${alpha})`;
                     this.ctx.lineWidth = 0.8;
                     this.ctx.stroke();
                 }
